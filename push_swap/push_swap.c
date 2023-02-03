@@ -6,12 +6,11 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:38:01 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/01/30 21:56:10 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:09:58 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 t_position	*optimal(t_stack **stack_a, t_stack **stack_b)
 {
@@ -91,20 +90,6 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b)
 		while (*stack_b)
 			pa(stack_b, stack_a);
 	}
-}
-
-int	check_sorted(t_stack **stack)
-{
-	t_stack		*current;
-
-	current = *stack;
-	while (current->next)
-	{
-		if (current->data > current->next->data)
-			return (0);
-		current = current->next;
-	}
-	return (1);
 }
 
 int	main(int ac, char **av)

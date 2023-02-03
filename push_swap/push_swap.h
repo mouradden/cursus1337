@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:41:05 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/01/30 22:07:42 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:38:59 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_actions
 }	t_actions;
 
 int			check_sorted(t_stack **stack);
-int			sorted_3(t_stack **stack);
 void		sort_3(t_stack **stack);
 void		ft_push(t_stack **stack, int value);
 int			ft_pop(t_stack **stack);
@@ -60,7 +59,7 @@ int			near_to(t_stack **stack, int v);
 int			min(t_stack **stack);
 int			max(t_stack **stack);
 void		sort_4(t_stack **stack_a, t_stack **stack_b);
-int			check_args(char **av);
+
 void		shift_up_b(t_stack **stack, int data);
 t_position	*optimal(t_stack **stack_a, t_stack **stack_b);
 
@@ -68,13 +67,10 @@ int			count_words(char *s, char c);
 int			len_word(char *s, char c);
 char		**ft_split(char *s, char c);
 
-int			ft_strlen(char *s);
-char		*ft_strjoin(char *s1, char *s2);
+int			my_strlen(char *s);
+char		*my_strjoin(char *s1, char *s2);
 
 long		ft_atoi(char *str);
-void		ft_putstr_fd(char *s, int fd);
-void		ft_putchar_fd(char c, int fd);
-int			check_duplicate(char **args);
 
 void		move(t_stack **stack_a, t_stack **stack_b, t_actions *actions);
 int			count_moves(t_stack **stack_a, t_stack **stack_b, int data);
@@ -88,6 +84,8 @@ void		move_rr(int a, int b, t_stack **stack_a, t_stack **stack_b);
 void		free_split(char **str);
 void		free_stack(t_stack **s);
 
+int			check_duplicate(char **args);
+int			check_args(char **av);
 char		**get_args(char **av, char *join);
 void		are_args_valid(char **args);
 void		fill_and_check_sorted(char **args, t_stack **sa);

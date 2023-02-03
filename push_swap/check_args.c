@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 10:34:15 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/01/30 22:14:19 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:40:10 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ char	**get_args(char **av, char *join)
 	i = 1;
 	while (av[i])
 	{
-		if (!ft_strlen(av[i]) || check_empty(av[i]))
+		if (!my_strlen(av[i]) || check_empty(av[i]))
 		{
 			free(join);
 			write(2, "Error\n", 6);
 			exit(1);
 		}
-		join = ft_strjoin(join, av[i]);
-		join = ft_strjoin(join, " ");
+		join = my_strjoin(join, av[i]);
+		join = my_strjoin(join, " ");
 		i++;
 	}
 	args = ft_split(join, ' ');

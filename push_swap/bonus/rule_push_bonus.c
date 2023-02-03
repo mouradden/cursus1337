@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   rule_push_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 22:12:44 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/01/31 17:33:36 by mdenguir         ###   ########.fr       */
+/*   Created: 2023/01/30 20:12:53 by mdenguir          #+#    #+#             */
+/*   Updated: 2023/01/31 19:13:07 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	check_empty(char *str)
+void	ft_pa(t_stack **stack_b, t_stack **stack_a)
 {
-	int		i;
+	int		v;
 
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t')
-		i++;
-	if (str[i] == '\0')
-		return (1);
-	else
-		return (0);
+	if (!stack_a)
+		return ;
+	v = ft_pop(stack_b);
+	ft_push(stack_a, v);
 }
 
-int	check_sorted(t_stack **stack)
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack		*current;
+	int		v;
 
-	current = *stack;
-	while (current->next)
-	{
-		if (current->data > current->next->data)
-			return (0);
-		current = current->next;
-	}
-	return (1);
+	if (!stack_b)
+		return ;
+	v = ft_pop(stack_a);
+	ft_push(stack_b, v);
 }

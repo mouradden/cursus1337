@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:49:47 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/01/30 20:32:13 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:39:31 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ char	**ft_split(char *s, char c)
 	return (ptr);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*my_strjoin(char *s1, char *s2)
 {
 	char	*joined;
 	int		index;
 
 	if (!s1 && !s2)
 		return (NULL);
-	joined = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	joined = (char *)malloc(my_strlen(s1) + my_strlen(s2) + 1);
 	if (!joined)
 		return (NULL);
 	index = 0;
@@ -91,10 +91,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	index = 0;
 	while (s2 && s2[index])
 	{
-		joined[ft_strlen(s1) + index] = s2[index];
+		joined[my_strlen(s1) + index] = s2[index];
 		index++;
 	}
-	joined[ft_strlen(s1) + index] = '\0';
+	joined[my_strlen(s1) + index] = '\0';
 	free(s1);
 	return (joined);
 }

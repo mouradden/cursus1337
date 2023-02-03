@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   stack_utils_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 20:09:04 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/01/31 17:37:45 by mdenguir         ###   ########.fr       */
+/*   Created: 2023/01/31 13:03:44 by mdenguir          #+#    #+#             */
+/*   Updated: 2023/01/31 20:34:58 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	push_swap_under_5(t_stack **stack_a, t_stack **stack_b)
-{
-	if (stack_size(stack_a) == 2)
-		sort_2(stack_a);
-	else if (stack_size(stack_a) == 3)
-		sort_3(stack_a);
-	else if (stack_size(stack_a) == 4)
-		sort_4(stack_a, stack_b);
-	else if (stack_size(stack_a) == 5)
-		sort_5(stack_a, stack_b);
-}
+#include "push_swap_bonus.h"
 
 void	ft_push(t_stack **stack, int value)
 {
@@ -59,6 +47,16 @@ int	ft_pop(t_stack **stack)
 	*stack = (*stack)->next;
 	free(tmp);
 	return (val);
+}
+
+int	my_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		++i;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 int	my_strlen(char *s)
