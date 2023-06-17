@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:47:09 by mdenguir          #+#    #+#             */
-/*   Updated: 2022/12/03 20:05:34 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/15 12:35:55 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 15
+#  define BUFFER_SIZE 15
 # endif
-# include "../minilibx.h"
-# include <stdlib.h>
+
+# include "../ft_printf/ft_printf.h"
 # include <fcntl.h>
-# include<unistd.h>
-# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include <limits.h>
 
 char	*ft_strjoin(char *s1, char *s2);

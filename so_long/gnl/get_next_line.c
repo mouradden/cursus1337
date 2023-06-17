@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 10:02:49 by mdenguir          #+#    #+#             */
-/*   Updated: 2022/11/30 19:28:45 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:20:57 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_read(int fd, char *buffer)
 		{
 			free(buffer);
 			free(buf);
+			exit(1);
 			return (NULL);
 		}
 		buf[count_read] = '\0';
@@ -96,20 +97,21 @@ char	*get_next_line(int fd)
 {
 	static char	*buffer;
 	char		*line;
+	static int	i;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+	{
+		close(fd);
 		return (0);
+	}	
 	buffer = ft_read(fd, buffer);
 	if (!buffer)
 	{
+		close(fd);
 		return (NULL);
 	}
 	line = ft_read_line(buffer);
 	buffer = free_buf(buffer);
+	i++;
 	return (line);
 }
-// int main()
-// {
-// 	int fd = open("test.txt", O_RDONLY);
-// 	printf("%s", get_next_line(100));
-// }

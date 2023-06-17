@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:57:47 by mdenguir          #+#    #+#             */
-/*   Updated: 2022/11/12 10:58:12 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/13 12:29:59 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,15 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
+
+// void check(char *buffer, char *buf, int count_read)
+// {
+// 	if (count_read == 0 && !buffer)
+// 		exit(1);
+// 	if (count_read == -1)
+// 	{
+// 		free(buffer);
+// 		free(buf);
+// 		exit(1);
+// 	}
+// }
