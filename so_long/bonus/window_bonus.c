@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:50:52 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/17 10:45:47 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/20 11:54:10 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,16 @@ void	create_image(t_map *map, t_imgs *imgs)
 
 	w = 50;
 	h = 50;
-	imgs->w = mlx_xpm_file_to_image(map->mlx, "assets/1.xpm", &w, &h);
-	imgs->p = mlx_xpm_file_to_image(map->mlx, "assets/p.xpm", &w, &h);
-	imgs->e = mlx_xpm_file_to_image(map->mlx, "assets/e.xpm", &w, &h);
-	imgs->c = mlx_xpm_file_to_image(map->mlx, "assets/c.xpm", &w, &h);
-	imgs->em = mlx_xpm_file_to_image(map->mlx, "assets/0.xpm", &w, &h);
-	imgs->en = mlx_xpm_file_to_image(map->mlx, "assets/X.xpm", &w, &h);
+	imgs->w = mlx_xpm_file_to_image(map->mlx, "textures/1.xpm", &w, &h);
+	imgs->p = mlx_xpm_file_to_image(map->mlx, "textures/p.xpm", &w, &h);
+	imgs->e = mlx_xpm_file_to_image(map->mlx, "textures/e.xpm", &w, &h);
+	imgs->c = mlx_xpm_file_to_image(map->mlx, "textures/c.xpm", &w, &h);
+	imgs->em = mlx_xpm_file_to_image(map->mlx, "textures/0.xpm", &w, &h);
+	imgs->en = mlx_xpm_file_to_image(map->mlx, "textures/X.xpm", &w, &h);
 	if (!imgs->w || !imgs->p || !imgs->e
 		|| !imgs->c || !imgs->em || !imgs->en)
 	{
-		ft_printf("ERROR : assets missing !!");
+		ft_printf("ERROR \n assets missing !!");
 		destroy_images(*map);
 		free_and_exit_failure(*map);
 	}	

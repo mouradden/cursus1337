@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:50:48 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/17 10:33:02 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:03:26 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int		check_unique_p_e_c(char **str);
 void	valid_map(char **str);
 void	build_window(t_map map);
 void	find_p_coordinates(t_map *map);
-int		is_path_exists_to_exit(t_map map, int row, int col);
 void	init(t_map *map, char *path);
 void	move_up(t_map *map);
 void	move_left(t_map *map);
@@ -60,7 +59,7 @@ void	free_2_dimensions(char **str);
 int		count_collect(char **str);
 int		detect_exit(char **str);
 void	fill_path_to_exit(t_map *map, int row, int col);
-int		is_valide_map(t_map map);
+int		is_valid_path(t_map map);
 void	check_args(char *str);
 void	free_and_exit_success(t_map map);
 void	free_and_exit_failure(t_map map);

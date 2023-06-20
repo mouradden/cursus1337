@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:50:37 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/16 20:32:47 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:10:01 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ char	**read_map(char *path)
 	i = 0;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
+	{
+		ft_printf("ERROR \n The file probably doesnt exist\n");
 		exit(1);
+	}
 	res = malloc(count_lines(path) * (sizeof(char *) + 1));
 	if (!res)
 		exit(1);
@@ -35,7 +38,6 @@ char	**read_map(char *path)
 		free(line);
 	}
 	res[i] = 0;
-	close(fd);
 	return (res);
 }
 
@@ -57,7 +59,7 @@ void	init(t_map *map, char *path)
 	map->map = read_map(path);
 	if (map->map[0] == NULL)
 	{
-		ft_printf("ERROR : Empty map!\n");
+		ft_printf("ERROR \n Empty map!\n");
 		exit(1);
 	}
 	valid_map(map->map);
@@ -66,9 +68,9 @@ void	init(t_map *map, char *path)
 	map->moves = 0;
 	find_p_coordinates(map);
 	find_x_coordinates(map);
-	if (!is_valide_map(*map))
+	if (!is_valid_path(*map))
 	{
-		ft_printf("ERROR : invalid map !!!");
+		ft_printf("ERROR \n invalid map !!!");
 		free_2_dimensions(map->map);
 		exit(1);
 	}

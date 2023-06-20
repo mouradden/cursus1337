@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:50:33 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/16 16:53:22 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:09:42 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,15 +106,16 @@ void	valid_map(char **str)
 	if (!check_rectangle_map(str) || !check_wall_map(str)
 		|| !check_unique_p_e_c(str) || !check_foreign_lettre(str))
 	{
-		ft_printf("ERROR : Check the map's format.\n");
+		ft_printf("ERROR \n Check the map's format.\n");
 		if (!check_rectangle_map(str))
-			ft_printf("The map is not rectangle");
+			ft_printf(" -->The map is not rectangle\n");
 		if (!check_wall_map(str))
-			ft_printf("The map does not have a complete wall\n");
+			ft_printf(" -->The map does not have a complete wall\n");
 		if (!check_unique_p_e_c(str))
-			ft_printf("The map must contain at least one P, one E and one C\n");
+			ft_printf(" -->The map must have one P, one E and at least one C\n");
 		if (!check_foreign_lettre(str))
-			ft_printf("The map must contain just P, E, C, 0 and 1\n");
+			ft_printf(" -->The map must contain just P, E, C, 0 and 1\n");
+		free_2_dimensions(str);
 		exit(1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:50:46 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/17 10:43:37 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/20 10:21:31 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	close_program(t_map *map)
 {
-	ft_printf("The window has been closed");
+	ft_printf("The window has been closed\n");
 	destroy_images(*map);
 	free_and_exit_success(*map);
 	return (0);
@@ -34,5 +34,5 @@ int	main(int ac, char **av)
 		mlx_loop(map.mlx);
 	}
 	else
-		ft_printf("Invalid arguments! SYNTAX : ./so_long map.ber");
+		ft_printf("Invalid arguments! SYNTAX : ./so_long map.ber\n");
 }

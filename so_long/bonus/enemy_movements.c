@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 15:33:41 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/15 19:06:00 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:06:25 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	move_x_up(t_map map)
 {
 	if (map.map[map.enemy_x - 1][map.enemy_y] != '1'
 		&& map.map[map.enemy_x - 1][map.enemy_y] != 'E'
-		&& map.map[map.enemy_x - 1][map.enemy_y] != 'C')
+		&& map.map[map.enemy_x - 1][map.enemy_y] != 'C'
+		&& map.map[map.enemy_x - 1][map.enemy_y] != 'X')
 	{
 		map.map[map.enemy_x - 1][map.enemy_y] = 'X';
 		map.map[map.enemy_x][map.enemy_y] = '0';
@@ -55,7 +56,8 @@ void	move_x_left(t_map map)
 {
 	if (map.map[map.enemy_x][map.enemy_y - 1] != '1'
 		&& map.map[map.enemy_x][map.enemy_y - 1] != 'E'
-		&& map.map[map.enemy_x][map.enemy_y - 1] != 'C')
+		&& map.map[map.enemy_x][map.enemy_y - 1] != 'C'
+		&& map.map[map.enemy_x - 1][map.enemy_y] != 'X')
 	{
 		map.map[map.enemy_x][map.enemy_y - 1] = 'X';
 		map.map[map.enemy_x][map.enemy_y] = '0';
@@ -66,7 +68,8 @@ void	move_x_right(t_map map)
 {
 	if (map.map[map.enemy_x][map.enemy_y + 1] != '1'
 		&& map.map[map.enemy_x][map.enemy_y + 1] != 'E'
-		&& map.map[map.enemy_x][map.enemy_y + 1] != 'C')
+		&& map.map[map.enemy_x][map.enemy_y + 1] != 'C'
+		&& map.map[map.enemy_x - 1][map.enemy_y] != 'X')
 	{
 		map.map[map.enemy_x][map.enemy_y + 1] = 'X';
 		map.map[map.enemy_x][map.enemy_y] = '0';
@@ -77,7 +80,8 @@ void	move_x_down(t_map map)
 {
 	if (map.map[map.enemy_x + 1][map.enemy_y] != '1'
 		&& map.map[map.enemy_x + 1][map.enemy_y] != 'E'
-		&& map.map[map.enemy_x + 1][map.enemy_y] != 'C')
+		&& map.map[map.enemy_x + 1][map.enemy_y] != 'C'
+		&& map.map[map.enemy_x - 1][map.enemy_y] != 'X')
 	{
 		map.map[map.enemy_x + 1][map.enemy_y] = 'X';
 		map.map[map.enemy_x][map.enemy_y] = '0';
