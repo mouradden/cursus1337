@@ -6,7 +6,7 @@
 /*   By: mdenguir <mdenguir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 17:50:37 by mdenguir          #+#    #+#             */
-/*   Updated: 2023/06/20 12:10:01 by mdenguir         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:24:59 by mdenguir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	init(t_map *map, char *path)
 	find_x_coordinates(map);
 	if (!is_valid_path(*map))
 	{
-		ft_printf("ERROR \n invalid map !!!");
+		ft_printf("ERROR \n invalid path in the map !!!");
 		free_2_dimensions(map->map);
 		exit(1);
 	}
