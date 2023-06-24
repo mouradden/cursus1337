@@ -11,6 +11,11 @@
 //     pthread_mutex_t *forks;
 // }   t_mutex;
 
+typedef struct s_shared
+{
+        pthread_mutex_t *forks;
+}       t_shared;
+
 typedef struct s_philo
 {
     int id;
@@ -18,9 +23,14 @@ typedef struct s_philo
     int time_to_eat;
     int time_to_sleep;
     long starting_time;
+    long last_meal;
     pthread_mutex_t *mutex;
-    pthread_mutex_t   *right_fork;
-    pthread_mutex_t   *left_fork;
+    // pthread_mutex_t   *right_fork;
+    // pthread_mutex_t   *left_fork;
+    int   right_fork;
+    int   left_fork;
+    t_shared    *shared;
+    // pthread_mutex_t *forks;
 }   t_philo;
 
 int	ft_atoi(char *str);
