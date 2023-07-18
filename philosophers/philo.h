@@ -24,6 +24,7 @@ typedef struct s_philo
     int time_to_sleep;
     long starting_time;
     long last_meal;
+    int is_alive;
     pthread_mutex_t *mutex;
     // pthread_mutex_t   *right_fork;
     // pthread_mutex_t   *left_fork;
